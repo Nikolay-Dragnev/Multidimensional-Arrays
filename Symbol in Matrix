@@ -1,0 +1,34 @@
+int n = int.Parse(Console.ReadLine());
+char[,] symbol = new char[n,n];
+bool isMatch = false;
+
+for (int row = 0;row < n; row++)
+{
+    string inputRow = Console.ReadLine();
+    for (int col = 0; col < n; col++)
+    {
+        symbol[row,col] = inputRow[col];
+    }
+}
+string searchSymbol = Console.ReadLine();
+for (int row = 0; row < n; row++)
+{
+    
+    for (int col = 0; col < n; col++)
+    {
+
+        if (symbol[row, col] == searchSymbol[0])
+        {
+            Console.WriteLine($"({row}, {col})");
+            isMatch= true;
+            return;
+        }
+
+    }
+}
+if (!isMatch)
+{
+    Console.WriteLine($"{searchSymbol} does not occur in the matrix");
+}     
+
+
