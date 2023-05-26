@@ -1,0 +1,19 @@
+string[] input = Console.ReadLine().Split(", ", StringSplitOptions.RemoveEmptyEntries);
+int rows = int.Parse(input[0]);
+int cols = int.Parse(input[1]);
+int[,] matrix= new int[rows, cols];
+int sum = 0;
+
+for (int row = 0; row < rows; row++)
+{
+    int[] ints =  Console.ReadLine().Split(", ", StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
+
+    for ( int col = 0; col < cols; col++)
+    {
+        matrix[row, col] = ints[col];
+        sum += matrix[row, col];
+    }
+}
+Console.WriteLine(rows);
+Console.WriteLine(cols);
+Console.WriteLine(sum);
